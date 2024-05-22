@@ -1,0 +1,86 @@
+App
+    Engine
+        running 
+
+        Gameplay
+            defaultImage
+
+            shapeGroupList
+            inputShapeGroup
+            deleteShapeGroup(shapeGroup)
+
+            maximumShapeWidth
+
+            handleHistory()
+            keyHistory
+            KeyListener
+
+            animationDebounce
+
+            handleWinningAndLosingConditions()
+            displayCentralMessage()
+
+            paintComponent(Graphics g){
+                shapeGroup.bulkDraw();
+                shapeGroup.easing.progress();
+            }
+
+            Logic
+                availableColors
+                sequenceLength
+
+                maximumGuessesAllowed
+                guessesLeft
+                secretColorSequence
+
+                keyAndColorPairs
+                        
+                generateSecretColorSequence()
+                receiveFeedback(colorSequence)
+
+Vector2
+    x, y
+
+public enum Feedback {
+    HIT_THE_NAIL_ON_THE_HEAD,
+    CLOSE_BUT_NO_CIGAR
+}
+
+Easing
+    Easing(Vector2)
+
+    fromX, toX
+    fromY, toY
+    current step
+    number of steps
+    completed
+
+    getX(), getY()
+
+    progress()
+
+shapeGroup
+    offset vector
+    easing
+    shapeList
+
+    attachedFeedback
+    displayFeedback(gameplay, g2d)
+
+    Shape
+        position vector
+        width, height
+
+        Image
+            getBlendedImage(color)
+
+            setImage
+            getRandomImage()
+
+            draw(gameplay, g2d, x, y)
+        
+        draw(gameplay, g2d, x, y)
+        
+    bulkDraw(gameplay, g2d)
+
+    clone()
